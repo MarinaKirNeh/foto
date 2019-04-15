@@ -1,0 +1,546 @@
+
+<!DOCTYPE html>
+
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<link href="https://fonts.googleapis.com/css?family=Frank+Ruhl+Libre" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Sacramento" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Ledger" rel="stylesheet">
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		body {
+			width: 100%;
+			margin: 0;
+			padding: 0;
+		}
+		.header {
+			width: 100%;
+			background: url("./VECTOR.jpg") no-repeat;
+			background-size: 75%;
+			height: 600px;
+			position: relative;
+			background-position: center;
+		
+
+		}
+
+		.header-menu {
+			position: relative;
+			margin: 0 auto;
+			top: 40px;
+			height: 40px;
+			 /*background-color: #444;*/
+			 opacity: 0.8;
+			 display: block;
+		}
+		.header-menu-telefon {
+			font-size: 25px;
+			font-weight: bold;
+			position: relative;
+			font-family: 'Sacramento', cursive;
+			margin-left: 18%;
+			margin-top: 1%;
+			display: inline-block;
+			color: #fff;
+		}
+		.header-menu-telefon::before {
+				content:"";
+				background: url('./tel.png') no-repeat;
+				width: 36px;
+				height: 30px;
+				position: absolute;
+				display: inline-block;
+				left: -30px;
+				top: 4px;
+
+
+		}
+	
+		.header-menu-btn {
+			height: 100%;
+			display: flex;
+			position: relative;
+			color: #d55d44;
+			
+		}
+		.header-menu__btn {
+			width: 50px;
+			height: 50px;
+			border-radius: 50%;
+			background-color: #fff;
+			display: block;
+			right: 18%;
+			top: 2%;
+			position: fixed;
+			z-index: 9999999;
+		}
+		.header-menu__btn span::before,
+		.header-menu__btn span::after,
+		.header-menu__btn span {
+			position: absolute;
+			width: 20px;
+			height: 5px;
+			top: 50%;
+			background-color: #222;
+			left: 50%;
+			margin-left: -13px;
+   			margin-top: -1px;
+   			content: '';
+		}
+		.header-menu__btn span::before,
+		.header-menu__btn span::after {
+			content: '';
+			display: block;
+			transition: 0.2s;
+		}
+		.header-menu__btn span::before {
+			transform: translateY(-10px);
+		
+		}
+		.header-menu__btn span::after {
+			transform: translateY(+7px);
+		}
+		.menu-btn__active span{
+			height: 0;
+		}
+    	.menu-btn__active span::before {
+			transform: rotate(35deg);
+		
+			
+
+		}
+		.menu-btn__active span::after {
+			transform: rotate(-35deg);
+		
+
+			
+		}
+		.menu__active {
+			transform: scaleX(1) translateX(0%);
+			opacity: 1;
+			display: block !important;
+		}
+		.header-menu-popup {
+			position: fixed;
+    		z-index: 999999;
+   			top: 0;
+   			right: 0;
+    		bottom: 0;
+   			left: 0;
+    		display: none;
+    		background-color: rgba(213, 93, 68, .9);
+    		overflow-y: hidden;
+
+		}
+
+
+		.header-menu__ul {
+			position: relative;
+		     width: 100;
+		     margin: 0 auto;
+		     text-align: center;
+		     list-style: none;
+
+		}
+		.header-menu__ul  li {
+			
+			position: relative;
+			margin: 50px 10px;
+		}
+		.header-menu__ul a {
+			font-family: 'Frank Ruhl Libre', serif;
+			font-size: 40px;
+			text-decoration: none;
+			color: #fff;
+			display: block;
+			font-weight: bold;
+			
+
+
+		}
+		.header-menu__ul li:nth-child(3) {
+			border: 2px solid #000;
+			padding: 15px;
+			margin: 0px;
+			box-sizing: border-box;
+			text-transform: uppercase;
+			display: inline-block;
+					
+		}
+		.header-menu__ul li:nth-child(3):hover a {
+			color: #000;
+			opacity: 1;
+		
+		}
+		.header-menu__ul li:nth-child(3):hover {
+			background-color: #fff;
+			border: 1px solid #fff;
+			opacity: 0.7;
+		}
+		.header h1 {
+			font-size: 45px;
+			color: #000;
+		    margin-top: 10%;
+			text-align: center;
+			opacity: 0.6;
+			padding: 35px;
+		}
+        .header h2 {
+        	font-size: 30px;
+        	color: #444;
+        	background-color: #fff;
+        	opacity: 0.7;
+        	padding: 15px;
+        	padding-left: 30px;
+        	height: 40px;
+        	margin-left: 50%;
+        	
+
+        }
+        /*.header-button {
+            top: 25%;
+        	background-color: #444;
+        	opacity: 0.7;
+        	height:30px;
+        	margin: 0 auto;
+            text-align: center;
+             position: relative;
+
+            
+        }
+        .header-button a {
+        	color: #fff;
+        	text-decoration: none;
+        	font-size: 20px;
+        	height: 40px;
+        	border:1px solid #fff;
+            padding: 17px;
+            margin-right: 5%;
+        }
+        .header-button a:hover {
+        	background-color: #000;
+        	border:1px solid #000;
+        	opacity: 0.7;
+        }  */
+		.content {
+			font-family: 'Source Sans Pro', sans-serif;
+			width: 75%;
+			background-color: #eee;
+			position: relative;
+			margin: 0 auto;
+			height: 1000px;
+			margin-top: 5%;
+		}
+		h3 {
+			padding-top: 5%;
+			font-size: 30px;
+			font-family: 'Ledger', serif;
+			color: #faca4c;
+			text-align: center;
+		}
+	    span {
+	 	font-family: 'Sacramento', cursive;
+	 	font-size: 40px;
+	 	padding-left: 10px;
+		}
+		.content-services {
+	 	position: relative;
+	 	height: auto;
+
+		}
+	
+	
+	  
+		.content-servis__foto__red {
+		 position: absolute;
+	 	top: 80px;
+	 	left: -6%;
+
+		}
+		.content-servis__foto__red img {
+	 	width: 400px;
+	 	height: 400px;
+	 	border-radius: 10px;
+	 }
+		.content-servis__foto__car {
+	 	position: absolute;
+	 	top:550px;
+	 	right: 8%;
+	 }
+		.content-servis__foto__car img {
+	 	width: 300px;
+	 	height: 400px;
+	 	border-radius: 10px;
+	 	box-sizing: border-box;
+	 }
+		.content-servis__foto__servis {
+		position: relative;
+		left: 19%;
+		float: right;
+
+		}
+		.content-servis__foto__servis__shooting,
+		.content-servis__foto__pricelist__price {
+		font-size: 22px;
+		font-family: 'Ledger', serif;
+		padding: 5px;
+		color: #cf4a41;
+		}
+		.content-servis__foto__servis__shooting li,
+		 .content-servis__foto__pricelist__price li {
+		font-size: 20px;
+		color: #444;
+		font-family: 'Sacramento', cursive;
+		}
+		.content-servis__foto__pricelist {
+		position: relative;
+		right: 16%;
+		float: left;
+		top: 30px;
+
+		}		
+		.content-servis__infa {
+		font-family: 'Source Sans Pro', sans-serif;
+		width: 75%;
+		background-color: #eee;
+		position: relative;
+		margin: 0 auto;
+		height: 800px;
+		margin-top: 5%;
+		}
+		h4 {
+		text-align: center;
+		font-size: 50px;
+		font-family: 'Sacramento', cursive;
+		color: #faca4c;
+		padding-top: 5%;
+		padding-bottom: 3%;
+	
+		}
+		.content-servis__infa__forma {
+		position: relative;
+	    text-align: center;
+		font-size: 20px;
+		background-color: #f1d48f;
+		padding: 20px;
+		border-radius: 15px;
+		width: 70%;
+		margin: 0 auto;
+		color: #000;
+		font-family: 'Sacramento', cursive;
+		}
+		.content-servis__infa__forma__name,
+		.content-servis__infa__forma__email,
+		.content-servis__infa__forma__checkbox  {
+		display: inline-block;
+		padding: 8px;
+		}
+		.content-servis__infa__forma__name:focus,
+		.content-servis__infa__forma__email:focus,
+		.content-servis__infa__forma__name:active,
+		.content-servis__infa__forma__email:active {
+		outline: none;
+		outline-offset: 0;
+		}
+		.content-services__name__email {
+		padding: 15px;
+		font-size: 18px;
+		border-radius: 10px;
+		margin: 10px;
+		}
+		.content-servis__checkbox {
+		margin: 10px;
+		cursor: pointer;
+
+		}
+		.content-servis__komment {
+		padding: 10px;
+		font-size: 18px;
+		border-radius: 5px;
+		}
+		.content-servis__infa__button {
+		padding: 15px;
+		font-size: 15px;
+		border-radius: 10px;
+		margin-top: 15px;
+		cursor: pointer;
+		background-color: #cf4a41;
+		text-transform: uppercase;
+		font-family: 'Sacramento', cursive;
+
+		}
+		.content-servis__infa__button:focus,
+		.content-servis__infa__button:active,
+		.content-servis__infa__button:-moz-focus-inner {
+   		border: 0; 
+		outline:none;
+		outline-offset: 0;		
+		}
+		.content-photogallery {
+		width: 75%;
+		background-color: #eee;
+		perspective: 1000px;
+		margin: 0 auto;
+		margin-top: 5%;
+		height: 800px;
+		}
+		.content-photogallery h5 {
+		font-size: 40px;
+		 color: #faca4c;
+		 text-align: center;
+		font-family: 'Sacramento', cursive;
+		 padding-top: 5%;
+		}
+		.content-photogallery__slaider {
+		width: 65%;
+		margin:  auto;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		align-items: center;
+		transition: 1s;
+		-webkit-transform: rotateX(3deg) rotateY(5deg) rotateZ(-10deg);
+		transform-style: preserve-3d;
+		
+		
+		}
+		.content-photogallery__slaider__foto img {
+		max-width: 100%;		
+		}
+		.content-photogallery__slaider__foto {
+		width: 200px;
+		margin:20px;
+		transition: 0.3s;
+		}
+		.content-photogallery__slaider__foto:hover {
+		cursor: pointer;
+		-webkit-transform: translateZ(100px);
+		}
+		.content-photogallery__slaider__origin {
+      	-webkit-transform: rotate(0);
+		}
+	</style>
+</head>
+<body>
+<div class="wrapper">
+	<div class="header"> 
+		<div class="header-menu-telefon"><a href="tel:+79992357909"></a>+79992357909</div>
+		<div class="header-menu-btn"><a href="" class="header-menu__btn"><span></span></a></div>
+		<div class="header-menu-popup">
+			<div class="header-menu-btn"><a href="" class="header-menu__btn"><span></span></a>
+				<div class="header-menu">
+					<ul class="header-menu__ul">
+						<li><a href="">Главная</a></li>
+						<li><a href="">Услуги</a></li>
+						<li><a href="">Заказать</a></li>
+						<li><a href="">Портфолио</a></li>
+						<li><a href="">Контакты</a></li>
+					</ul>
+				</div>
+				</div>
+		</div>
+	
+		<!--<h1>Photography is a prism of your soul</h1>
+		<h2>Love yourself<br> Be yourself</h2>
+		<div class="header-button"><a href="">Подробнее</a></div>-->
+	</div>
+	<div class="content">
+		<h3>Услуги <span> the photographer</span></h3>
+		<div class="content-services">
+			<div class="content-servis__foto">
+				<div class="content-servis__foto__red"><img src="./2.png">
+					<div class="content-servis__foto__servis">
+						<ul class="content-servis__foto__servis__shooting">Cъемка:
+							<li>свадебных торжеств</li>
+							<li>день рождения</li>
+							<li>в студии(индивидуальные или семейные)</li>
+							<li>любых мероприятий</li>
+							<hr>Итог - положительные эмоции
+						</ul>
+					</div>
+				</div>
+				<div class="content-servis__foto__car"><img src="./7.png">
+					<div class="content-servis__foto__pricelist">
+						<ul class="content-servis__foto__pricelist__price">Price list:
+							<li>от 2 ч до целого дня ~ 2 t до 20 t</li>
+							<li>от 1 ч до целого дня ~ 1 t до 10 t</li>
+							<li>от 30 min до 5-6 часов ~ 700 r до 7 t</li>
+							<li>от 1 ч до полного дня эмоций<br>(только положительных) ~ 700 r до 30 t</li>
+							<hr>Итог-качественная работа
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="content-servis__infa">
+		<h4>Заказать online</h4>
+		<div class="content-servis__infa__forma">
+			<form action="" method="">
+				<div class="content-servis__infa__forma__name">
+					<input type="text" class="content-services__name__email" name="name" maxlength="10" placeholder="Имя">
+				</div>
+				<div class="content-servis__infa__forma__email">
+				<input type="email" class="content-services__name__email" name="email" maxlength="20" placeholder="E-mail">
+				</div>
+				<div class="content-servis__infa__forma__checkbox">     
+			 		<label for="1">Свадебное торжество 
+					<input type="checkbox" id ="1"class="content-servis__checkbox" name="">
+			 		</label>
+			 		<label for="2">День Рождения
+			 			<input type="checkbox"  id ="2"class="content-servis__checkbox"  name=""> 
+			 		</label>
+			 		<label for="3">Студия
+			 			<input type="checkbox" id ="3" class="content-servis__checkbox"  name="">
+			 		</label>
+			 		<label for="4"><br>Мероприятие
+			 			<input type="checkbox"  id ="4"class="content-servis__checkbox" name="">
+			 		</label>
+			 		<label for="5">Другое
+			 			<input type="checkbox" id ="5"class="content-servis__checkbox"  name="">
+			 		</label>
+				</div>
+	       		 <div class="content-servis__infa__forma__komment">
+	        		<textarea name="text" class="content-servis__komment" cols="52b" rows="8" placeholder="Комментарии"></textarea>
+	        	</div>
+             	<div class="content-servis__infa__forma__button">
+             		<input type="submit" class="content-servis__infa__button" name="submit" value="Отрпавить">
+             	</div>
+			</form>
+		 </div>	
+	</div>
+		<div class="content-photogallery">
+			<h5>Example  работ</h5>
+			<div class="content-photogallery__slaider">
+				<div class="content-photogallery__slaider__foto"><img src="./r.jpeg" alt="Ребенок на самокате"></div>
+				<div class="content-photogallery__slaider__foto"><img src="./s.jpeg" alt="Сова"></div>
+				<div class="content-photogallery__slaider__foto"><img src="./l.jpeg" alt="Девочки"></div>
+				<div class="content-photogallery__slaider__foto"><img src="./o.jpeg" alt="Костер"></div>
+				<div class="content-photogallery__slaider__foto"><img src="./dog.jpeg" alt="Собака с игрушкой"></div>
+				<div class="content-photogallery__slaider__foto"><img src="./3.png" alt="Природа"></div>
+			</div>
+		</div>
+		<div class="content-order"></div>
+	</div>
+	<div class="footer"></div>
+</div>
+<script  src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+	<script>
+		$('.content-photogallery__slaider__foto').on('click', function() {
+			$('.content-photogallery__slaider').toggleClass('.content-photogallery__slaider__origin');
+		})
+	</script>
+	<script>
+		$('.header-menu-btn').on('click', function(e){
+			e.preventDefault();
+			$(this).toggleClass('menu-btn__active');
+			$('.header-menu-popup').toggleClass('menu__active');
+		})
+    </script>
+</body>
+</html>
